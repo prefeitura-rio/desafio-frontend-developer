@@ -1,66 +1,84 @@
-# Desafio Técnico – Desenvolvedor(a) Front-end (Pleno)
+🌬️ Painel de Qualidade do Ar
+Essse projeto é parte de um desafio técnico.
+O objetivo é oferecer aos cidadãos um painel que exibe, de forma clara e acessível, a qualidade do ar em diferentes bairros do Rio de Janeiro.
 
-Bem-vindo(a) ao desafio técnico!
+📸 Preview
 
-Nosso objetivo com este desafio é avaliar suas habilidades em desenvolvimento front-end moderno, boas práticas de UI/UX, integração com APIs e componentização.
+🚀 Tecnologias Utilizadas
+Next.js 15
+React 19
+TypeScript
+Tailwind CSS
+Leaflet + React Leaflet (para exibir um mapa interativo com os bairros do EJ)
+Recharts
+Vitest + Testing Library (para testes unitários)
 
-## 📌 Contexto
+✨ Funcionalidades Implementadas
+Visualização da qualidade do ar por bairro no Mapa Interativo.
+Tabela com dados recentes de qualidade do ar.
+Filtros por bairro e qualidade.
+Alternância entre visualização de mapa e tabela.
+Exibição de detalhes e gráfico em modal ao clicar em um bairro.
+Dados simulados via API mockada interna (/api/qualidade-ar).
+Responsividade para dispositivos móveis.
+Acessibilidade com uso de labels, roles e navegação por teclado.
+Testes automatizados com Vitest para componentes e interações principais.
 
-A Prefeitura do Rio de Janeiro quer oferecer aos cidadãos um Painel de Qualidade do Ar, onde qualquer pessoa pode visualizar dados atualizados sobre a qualidade do ar em diferentes bairros da cidade. A ideia é permitir que os moradores consultem as medições mais recentes, entendam a situação em sua região e possam planejar suas atividades ao ar livre com mais segurança.
+🧠 Decisões Técnicas
+O projeto foi iniciado com o template oficial do Next.js 15 com App Router e Tailwind CSS.
+Utilizei componentização para garantir reutilização e facilitar os testes.
+Como o SWC do Next não é compatível com todas as bibliotecas de testes, optei por usar Babel com Vitest para conseguir rodar os testes.
+As fontes foram configuradas manualmente via CSS para evitar conflito com next/font ao usar Babel.
+Os dados estão mockados internamente na rota src/app/api/qualidade-ar/route.ts, simulando uma API REST.
 
-Seu desafio é desenvolver uma interface interativa para exibir essas informações de maneira clara e acessível.
+🛠️ Como Rodar o Projeto Localmente
+Clone o repositório: git clone https://github.com/prefeitura-rio/desafio-frontend-developer
+navegue até o repositório clonado: cd seu-repo
 
-## ✨ Requisitos do Desafio
+    Instale as dependências: npm install
 
-### 🔹 Funcionalidades Esperadas
+    Rode o servidor local: npm run dev
+    Acesse: http://localhost:3000
 
-- Página principal do Painel de Qualidade do Ar
-    - Exibir um mapa interativo com os bairros do Rio de Janeiro e a qualidade do ar em cada um (use um mock de dados).
-    - Exibir uma tabela ou lista com as medições recentes de qualidade do ar.
+📁 Estrutura do Projeto (resumida)
+src/
+|\_\_ **tests**/
+| |**Filtro.test.tsx
+| |**page.test.tsx
+├── app/
+│ ├── api/qualidade-ar/route.ts # Mock da API
+│ ├── globals.css
+│ └── layout.tsx
+| └── page.tsx
+├── components/
+│ ├── Filtro.tsx
+│ ├── Footer.tsx
+│ ├── Header.tsx
+| |\_\_ Home.tsx
+│ ├── Mapa.tsx
+│ ├── ModalDetalhes.tsx
+│ ├── QualidadeIcone.tsx
+│ └── Tabela.tsx
+├── hooks/
+│ └── useQualidadeAr.ts
+├── vitest.setup.ts
 
-- Filtros e Interatividade
-    - Permitir filtrar os dados por bairro e nível de qualidade do ar (bom, moderado, ruim, péssimo).
-    - Permitir alternar entre visualização de mapa e lista.
+🧪 Como Rodar os Testes
+npm run test
+Ou, para rodar apenas um dos testes:
+npm run test src/**tests**/<nome_do_teste_a_ser_rodado>
+EX:npm run test src/**tests**/Filtro.test.tsx
 
-- Detalhes do bairro
-    - Ao clicar em um bairro, exibir detalhes sobre a qualidade do ar naquele local, incluindo medições recentes e um gráfico de variação ao longo do tempo.
+✅ Checklist para Entrega
+Interface clara e responsiva ✅
+Filtros funcionais ✅
+Dados e gráfico em modal ✅
+Código limpo e organizado ✅
+README documentado ✅
+Testes automatizados ✅
 
-- Simulação de API
-    - Criar um pequeno serviço mockado que simule uma API REST para fornecer dados fictícios de qualidade do ar.
+🤝 Considerações Finais
+Este projeto foi desenvolvido com foco em boas práticas de acessibilidade, responsividade, organização e clareza de código.
+Os testes foram pensados para garantir confiabilidade nas principais funcionalidades da aplicação.
 
-### 🔹 Requisitos Técnicos
-
-- Next.js para desenvolvimento.
-- Uso de componentes reutilizáveis.
-- Gerenciamento de estado.
-- Consumo de API REST mockada para obter os dados.
-- Boa responsividade e acessibilidade.
-- Boa organização do código e boas práticas de desenvolvimento.
-- Uso de Git e GitHub para versionamento.
-- README explicativo, incluindo como rodar o projeto e decisões tomadas.
-
-### 🔹 Diferenciais (não obrigatórios, mas valorizados)
-- Uso de TypeScript.
-- Uso de bibliotecas de UI modernas como shadcn/ui, Chakra UI, Tailwind CSS ou similares.
-- Implementação de testes automatizados (unitários ou de integração).
-
-## 🏗️ Como Submeter o Desafio
-
-1. Faça um fork ou clone este repositório.
-2. Implemente a solução seguindo os requisitos descritos.
-3. Inclua um pequeno documento (ou atualize este README) explicando suas decisões técnicas, estrutura do código e instruções para rodar o projeto.
-4. Envie o link do repositório para nós!
-
-## 📖 O que será avaliado?
-
-- Código bem estruturado e reutilizável.
-- Boas práticas de UI/UX e responsividade.
-- Organização e clareza na implementação.
-- Integração eficiente com APIs e gerenciamento de estado.
-- Documentação clara do projeto.
-
-## ❓ Dúvidas?
-
-Se tiver qualquer dúvida, fique à vontade para perguntar!
-
-Boa sorte! 🚀
+Fico à disposição para quaisquer dúvidas ou para apresentar o projeto!
