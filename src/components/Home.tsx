@@ -1,15 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
+import { FaMap, FaTable } from "react-icons/fa";
+import { IoMdCloseCircle } from "react-icons/io";
 import useQualidadeAr from "../hooks/useQualidadeAr";
 import ModalDetalhes from "./ModalDetalhes";
 import Tabela from "./Tabela";
 import Filtro from "./Filtro";
 import Header from "./Header";
 import Footer from "./Footer";
-import Mapa from "./Mapa";
-import { FaMap, FaTable } from "react-icons/fa";
-import { IoMdCloseCircle } from "react-icons/io";
+import dynamic from "next/dynamic";
+
+const Mapa = dynamic(() => import("./Mapa"), {
+  ssr: false,
+});
 
 interface QualidadeAr {
   id: number;
