@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Geist&display=swap");
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer base {
+  :root {
+    --cor-azul-escuro: #004A80;
+    --cor-cinza-texto: #515151;
+    --cor-fundo: #F1F0F0;
+    --cor-botao-primario: #2974E0;
+    --cor-botao-secundario: #1BB5D9;
+    --cor-hover-tabela: #E0E0E0; 
+    --cor-borda-tabela: #D1D5DB; 
+    --cor-icone: #1BB5D9; 
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Geist", sans-serif;
+}
